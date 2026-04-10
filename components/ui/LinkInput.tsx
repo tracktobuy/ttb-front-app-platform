@@ -4,9 +4,10 @@ import { useState } from "react"
 
 type Props = {
     onAdd: (link: string) => void
+    loading?: boolean
 }
 
-export default function LinkInput({ onAdd }: Props) {
+export default function LinkInput({ onAdd, loading }: Props) {
 
     const [link, setLink] = useState("")
 
@@ -32,7 +33,7 @@ export default function LinkInput({ onAdd }: Props) {
                     onKeyDown={(e) => {
                         if (e.key === "Enter") handleAdd()
                     }}
-                    placeholder="Cole o link do produto aqui..."
+                    placeholder="Cole o link do produto (Amazon, Shopee, Mercado Livre...)"
                     className="flex-1 px-6 py-4 outline-none"
                 />
 
@@ -40,7 +41,7 @@ export default function LinkInput({ onAdd }: Props) {
                     onClick={handleAdd}
                     className="bg-indigo-500 hover:bg-indigo-600 transition text-white px-6"
                 >
-                    +
+                    {loading ? "..." : "+"}
                 </button>
 
             </div>

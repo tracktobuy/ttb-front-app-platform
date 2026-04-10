@@ -3,6 +3,8 @@
 import Image from "next/image"
 import { formatPrice } from "@/utils/formatPrice"
 
+import { Pencil } from "lucide-react"
+
 interface Props {
   title: string
   price: number
@@ -26,6 +28,17 @@ export default function ProductCard({ title, price, image }: Props) {
         />
 
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-3">
+
+          <button className="
+  absolute top-3 right-3
+  bg-white/80 backdrop-blur-md
+  p-2 rounded-full
+  opacity-0 group-hover:opacity-100
+  transition
+  shadow-md hover:scale-110
+">
+            <Pencil size={16} className="text-gray-700" />
+          </button>
 
           <button className="bg-white px-4 py-2 rounded-full text-sm">
             Abrir

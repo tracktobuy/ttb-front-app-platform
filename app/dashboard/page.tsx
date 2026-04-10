@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 
 import LinkInput from "@/components/ui/LinkInput"
 import MasonryGrid from "@/components/ui/MasonryGrid"
-import BudgetBar from "@/components/ui/BudgetBar"
+/*import BudgetBar from "@/components/ui/BudgetBar"*/
 
 import ProductCard from "@/components/products/ProductCard"
 import SkeletonCard from "@/components/products/SkeletonCard"
@@ -15,6 +15,7 @@ export default function Dashboard() {
 
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(false)
+  const [filter, setFilter] = useState("Todos")
 
   const budget = 500
 
@@ -53,8 +54,9 @@ export default function Dashboard() {
 
       const newProduct: Product = {
         title: "Produto extraído",
-        price: 199,
-        image: "https://picsum.photos/300/400"
+        price: 150,
+        image: "https://picsum.photos/300/400",
+        category: "Escritório"
       }
 
       setProducts(prev => [...prev, newProduct])
@@ -65,28 +67,54 @@ export default function Dashboard() {
 
   }
 
+  const filteredProducts =
+    filter === "Todos"
+      ? products
+      : products.filter(p => p.category === filter)
+
   return (
 
     <div className="space-y-6">
 
-      <LinkInput onAdd={addProduct} />
+      <LinkInput onAdd={addProduct} loading={loading} />
 
-      <BudgetBar
-        total={total}
-        budget={budget}
-      />
+      {products.length > 0 && (
+        <div className="flex gap-3 px-6">
+          {["Todos", "Escritório", "Rock Music Studio"].map(cat => (
+            <button
+              key={cat}
+              onClick={() => setFilter(cat)}
+              className={`px-4 py-2 rounded-full text-sm ${filter === cat
+                  ? "bg-indigo-600 text-white"
+                  : "bg-gray-200"
+                }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {products.length === 0 && !loading && (
+        <div className="text-center mt-20 text-gray-500">
+          <p className="text-lg font-medium">
+            Nenhum produto ainda
+          </p>
+          <p className="text-sm">
+            Cole um link acima para começar
+          </p>
+        </div>
+      )}
 
       <MasonryGrid>
 
         {loading && (
           <>
             <SkeletonCard />
-            <SkeletonCard />
-            <SkeletonCard />
           </>
         )}
 
-        {products.map((p, i) => (
+        {filteredProducts.map((p, i) =>  (
           <ProductCard
             key={i}
             title={p.title}

@@ -7,7 +7,7 @@ export default function Home() {
     <main className="flex flex-col items-center justify-center min-h-screen text-center px-6">
 
       <h1 className="text-5xl font-bold text-indigo-600 mb-6">
-        T2T
+        T2B
       </h1>
 
       <p className="text-lg text-gray-600 max-w-xl mb-8">

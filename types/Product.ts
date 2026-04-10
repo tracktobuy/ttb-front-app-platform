@@ -5,6 +5,8 @@ export interface Product {
   price: number
   image: string
   link?: string
+  category?: string
+  boardId?: string
   createdAt?: string
 
 }
