@@ -17,9 +17,8 @@ export default function Dashboard() {
 
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(false)
-  const [filter, setFilter] = useState("Todos")
-  const [labels, setLabels] = useState([])
-
+  const [filter, setFilter] = useState("Todos") 
+  const [labels, setLabels] = useState<string[]>([]);
   const budget = 500
 
   const total = products.reduce(
