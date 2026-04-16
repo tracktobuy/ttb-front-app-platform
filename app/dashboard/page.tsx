@@ -11,11 +11,14 @@ import SkeletonCard from "@/components/products/SkeletonCard"
 
 import { Product } from "@/types/Product"
 
+import axios from 'axios'
+
 export default function Dashboard() {
 
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(false)
   const [filter, setFilter] = useState("Todos")
+  const [labels, setLabels] = useState([])
 
   const budget = 500
 
@@ -26,6 +29,21 @@ export default function Dashboard() {
 
   // carregar produtos salvos
   useEffect(() => {
+
+    const url = 'https://demo2129024.mockable.io/api/v1/groups/019d91b7-1810-7c00-b41f-13140b16e1d8/labels'
+    const config = {
+      headers: { 'Authorization': 'JWTTokenAqui' },
+    }
+
+    axios.get(url, config)
+
+      .then(response => {
+        if (response.data.labels.length > 0) {
+          setLabels(["todos", ...response.data.labels])
+        }
+      }
+
+      );
 
     const savedProducts = localStorage.getItem("carterest-products")
 
@@ -80,13 +98,13 @@ export default function Dashboard() {
 
       {products.length > 0 && (
         <div className="flex gap-3 px-6">
-          {["Todos", "Escritório", "Rock Music Studio"].map(cat => (
+          {labels.map(cat => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
               className={`px-4 py-2 rounded-full text-sm ${filter === cat
-                  ? "bg-indigo-600 text-white"
-                  : "bg-gray-200"
+                ? "bg-indigo-600 text-white"
+                : "bg-gray-200"
                 }`}
             >
               {cat}
@@ -114,7 +132,7 @@ export default function Dashboard() {
           </>
         )}
 
-        {filteredProducts.map((p, i) =>  (
+        {filteredProducts.map((p, i) => (
           <ProductCard
             key={i}
             title={p.title}
