@@ -10,8 +10,9 @@ import ProductCard from "@/components/products/ProductCard"
 import SkeletonCard from "@/components/products/SkeletonCard"
 
 import { Product } from "@/types/Product"
-
 import axios from 'axios'
+import { API_ENDPOINT } from "@/utils/apiUrls"
+
 
 export default function Dashboard() {
 
@@ -29,20 +30,18 @@ export default function Dashboard() {
   // carregar produtos salvos
   useEffect(() => {
 
-    const url = 'https://demo2129024.mockable.io/api/v1/groups/019d91b7-1810-7c00-b41f-13140b16e1d8/labels'
+    console.log("carrengando labels...")
+    const groupId = '019d91b7-1810-7c00-b41f-13140b16e1d8'
+    const endpoint =  `${API_ENDPOINT}/api/v1/groups/${groupId}/labels`
     const config = {
       headers: { 'Authorization': 'JWTTokenAqui' },
     }
 
-    axios.get(url, config)
-
-      .then(response => {
-        if (response.data.labels.length > 0) {
-          setLabels(["todos", ...response.data.labels])
-        }
+    axios.get(endpoint, config).then(response => {
+      if (response.data.labels.length > 0) {
+         setLabels(["todos", ...response.data.labels])
       }
-
-      );
+    });
 
     const savedProducts = localStorage.getItem("carterest-products")
 
