@@ -1,0 +1,1 @@
+export const API_ENDPOINT = 'https://demo2129024.mockable.io'
