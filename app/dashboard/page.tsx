@@ -18,7 +18,7 @@ export default function Dashboard() {
 
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(false)
-  const [filter, setFilter] = useState("Todos") 
+  const [filter, setFilter] = useState("Todos")
   const [labels, setLabels] = useState<string[]>([]);
   const budget = 500
 
@@ -27,21 +27,28 @@ export default function Dashboard() {
     0
   )
 
-  // carregar produtos salvos
-  useEffect(() => {
+  const fetchLabels = async () => {
 
-    console.log("carrengando labels...")
     const groupId = '019d91b7-1810-7c00-b41f-13140b16e1d8'
-    const endpoint =  `${API_ENDPOINT}/api/v1/groups/${groupId}/labels`
+    const endpoint = `${API_ENDPOINT}/api/v1/groups/${groupId}/labels`
     const config = {
       headers: { 'Authorization': 'JWTTokenAqui' },
     }
 
-    axios.get(endpoint, config).then(response => {
-      if (response.data.labels.length > 0) {
-         setLabels(["todos", ...response.data.labels])
+    try {
+      const response = await axios.get(endpoint, config)
+      const { labels } = response.data?.data ?? {}
+      if (labels && labels.length > 0) {
+        setLabels(["todos", ...labels])
       }
-    });
+    } catch (error) {
+      console.error("Failed to fetch labels:", error)
+    }
+  }
+
+  // carregar produtos salvos
+  useEffect(() => {
+    fetchLabels()
 
     const savedProducts = localStorage.getItem("carterest-products")
 
