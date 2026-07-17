@@ -14,7 +14,7 @@ export default function RootLayout({
 
     <html lang="pt-br">
       
-      <title>Track To Buy - Platform</title>
+      <title>TrackToBuy - Platform</title>
 
       <body className="bg-bg text-primary">
 
