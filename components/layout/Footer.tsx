@@ -1,14 +1,22 @@
+import Image from "next/image"
+
 export default function Footer() {
 
   return (
 
     <footer className="w-full border-t border-strong mt-10">
 
-      <div className="max-w-7xl mx-auto px-6 py-6 text-sm text-muted flex justify-between">
+      <div className="max-w-7xl mx-auto px-1 py-1 text-sm text-muted flex items-center justify-between">
 
-        <span>T2B ©{new Date().getFullYear()}</span>
+        <Image
+          src="/ttb04.svg"
+          alt=""
+          width={150}
+          height={150}
+          aria-hidden="true"
+        />
 
-        <span>Organize desejos. Planeje compras.</span>
+        <p>TrackToBuy - Copyright  {new Date().getFullYear()}</p>
 
       </div>
 
