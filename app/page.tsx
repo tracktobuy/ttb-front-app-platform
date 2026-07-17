@@ -6,8 +6,8 @@ export default function Home() {
 
     <main className="flex flex-col items-center justify-center min-h-screen text-center px-6">
 
-      <h1 className="text-5xl font-bold text-accent mb-6">
-        T2B
+      <h1 className="text-5xl font-bold text-primary mb-6">
+        Track<span className="text-accent">To</span>Buy
       </h1>
 
       <p className="text-lg text-muted max-w-xl mb-8">
