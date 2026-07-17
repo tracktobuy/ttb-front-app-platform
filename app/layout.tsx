@@ -1,7 +1,7 @@
 import "./globals.css"
 
 import Header from "@/components/layout/Header"
-import Sidebar from "@/components/layout/Sidebar"
+import SidebarConditional from "@/components/layout/SidebarConditional"
 import Footer from "@/components/layout/Footer"
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
 
         <div className="flex min-h-screen">
 
-          <Sidebar />
+          <SidebarConditional />
 
           <div className="flex flex-col flex-1">
 

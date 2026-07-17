@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 
 export default function Home() {
@@ -7,12 +8,17 @@ export default function Home() {
     <main className="flex flex-col items-center justify-center min-h-screen text-center px-6">
 
       <h1 className="text-5xl font-bold text-primary mb-6">
-        Track<span className="text-accent">To</span>Buy
+        <Image
+            src="/ttb04.svg"
+            alt=""
+            width={400}
+            height={400}
+            aria-hidden="true"
+          />
       </h1>
 
       <p className="text-lg text-muted max-w-xl mb-8">
-        Salve produtos da internet como um Pinterest de compras.
-        Organize itens em boards, acompanhe preços e planeje seu orçamento.
+        Access to your tracking dashboard and manage your purchases with ease. Start tracking your orders today and never miss an update!
       </p>
 
       <Link
