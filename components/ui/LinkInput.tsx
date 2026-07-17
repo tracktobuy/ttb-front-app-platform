@@ -25,7 +25,7 @@ export default function LinkInput({ onAdd, loading }: Props) {
 
         <div className="w-full flex justify-center mt-6">
 
-            <div className="flex w-full max-w-2xl bg-white rounded-full shadow-md overflow-hidden">
+            <div className="flex w-full max-w-2xl bg-surface rounded-full shadow-md overflow-hidden">
 
                 <input
                     value={link}
@@ -39,7 +39,7 @@ export default function LinkInput({ onAdd, loading }: Props) {
 
                 <button
                     onClick={handleAdd}
-                    className="bg-indigo-500 hover:bg-indigo-600 transition text-white px-6"
+                    className="bg-accent hover:bg-accent-line transition text-bg px-6"
                 >
                     {loading ? "..." : "+"}
                 </button>

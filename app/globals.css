@@ -1,9 +1,78 @@
 @import "tailwindcss";
 
+:root {
+  --color-bg: #090A0C;
+  --color-surface: #111318;
+  --color-surface-raised: #16191F;
+  --color-surface-80: rgba(17, 19, 24, 0.8);
+  --color-accent: #F6A823;
+  --color-accent-dim: rgba(246, 168, 35, 0.14);
+  --color-accent-line: rgba(246, 168, 35, 0.35);
+  --color-text-primary: #EDEEF0;
+  --color-text-muted: #9498A1;
+  --color-text-faint: #5E626C;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.14);
+}
+
 body {
-  background: linear-gradient(
-    180deg,
-    #f8fafc 0%,
-    #eef2ff 100%
-  );
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+.bg-bg {
+  background-color: var(--color-bg);
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+.bg-surface-raised {
+  background-color: var(--color-surface-raised);
+}
+
+.bg-surface-80 {
+  background-color: var(--color-surface-80);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+.bg-accent-dim {
+  background-color: var(--color-accent-dim);
+}
+
+.bg-accent-line {
+  background-color: var(--color-accent-line);
+}
+
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-faint {
+  color: var(--color-text-faint);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-bg {
+  color: var(--color-bg);
+}
+
+.border-soft {
+  border-color: var(--color-border);
+}
+
+.border-strong {
+  border-color: var(--color-border-strong);
 }

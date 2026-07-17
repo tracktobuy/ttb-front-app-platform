@@ -1,0 +1,13 @@
+{
+"bg": { "rgb": "rgb(9 10 12)", "hex": "#090A0C" },
+"surface": { "rgb": "rgb(17 19 24)", "hex": "#111318" },
+"surfaceRaised": { "rgb": "rgb(22 25 31)", "hex": "#16191F" },
+"accent": { "rgb": "rgb(246 168 35)", "hex": "#F6A823" },
+"accentDim": { "rgba": "rgb(246 168 35 / 0.14)", "hex": "#F6A823", "alpha": 0.14 },
+"accentLine": { "rgba": "rgb(246 168 35 / 0.35)", "hex": "#F6A823", "alpha": 0.35 },
+"textPrimary": { "rgb": "rgb(237 238 240)", "hex": "#EDEEF0" },
+"textMuted": { "rgb": "rgb(148 152 161)", "hex": "#9498A1" },
+"textFaint": { "rgb": "rgb(94 98 108)", "hex": "#5E626C" },
+"border": { "rgba": "rgb(255 255 255 / 0.08)", "hex": "#FFFFFF", "alpha": 0.08 },
+"borderStrong": { "rgba": "rgb(255 255 255 / 0.14)", "hex": "#FFFFFF", "alpha": 0.14 }
+}
