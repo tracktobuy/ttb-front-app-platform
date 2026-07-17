@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Logo from "./Logo"
 
 export default function Header() {
 
@@ -8,10 +9,10 @@ export default function Header() {
 
       <div className="max-w-7xl mx-auto flex justify-between items-center h-16 px-6">
 
-        <Link href="/dashboard">
+        <Link href="/">
 
           <h1 className="text-xl font-bold text-accent cursor-pointer">
-            T2B
+            <Logo className="text-text-primary" withWordmark={true} />
           </h1>
 
         </Link>
