@@ -14,7 +14,7 @@ export default function RootLayout({
 
     <html lang="pt-br">
 
-      <body className="bg-slate-50">
+      <body className="bg-bg text-primary">
 
         <div className="flex min-h-screen">
 

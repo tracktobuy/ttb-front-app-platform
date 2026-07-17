@@ -11,30 +11,30 @@ const percent = Math.min((total/budget)*100,100)
 
 return(
 
-<div className="w-full max-w-3xl mx-auto mt-6 bg-white rounded-xl shadow-sm p-4">
+<div className="w-full max-w-3xl mx-auto mt-6 bg-surface rounded-xl shadow-sm p-4">
 
-<div className="flex justify-between mb-2">
+    <div className="flex justify-between mb-2">
 
-<span className="font-medium text-gray-700">
-Total: R$ {total}
-</span>
+      <span className="font-medium text-primary">
+        Total: R$ {total}
+      </span>
 
-<span className="text-gray-500">
-Orçamento: R$ {budget}
-</span>
+      <span className="text-muted">
+        Orçamento: R$ {budget}
+      </span>
 
-</div>
+    </div>
 
-<div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+    <div className="w-full h-3 bg-surface-raised rounded-full overflow-hidden">
 
-<div
-className="h-full bg-indigo-500 transition-all duration-500"
-style={{width:`${percent}%`}}
-></div>
+      <div
+        className="h-full bg-accent transition-all duration-500"
+        style={{width:`${percent}%`}}
+      ></div>
 
-</div>
+    </div>
 
-<p className="text-sm text-gray-500 mt-1">
+    <p className="text-sm text-muted mt-1">
 {percent.toFixed(0)}% do orçamento
 </p>
 

@@ -1,24 +1,25 @@
 import Link from "next/link"
+import Logo from "./Logo"
 
 export default function Header() {
 
   return (
 
-    <header className="sticky top-0 backdrop-blur-md bg-white/70 border-b border-gray-200 z-50">
+    <header className="sticky top-0 backdrop-blur-md bg-surface border-b border-strong z-50">
 
       <div className="max-w-7xl mx-auto flex justify-between items-center h-16 px-6">
 
-        <Link href="/dashboard">
+        <Link href="/">
 
-          <h1 className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent cursor-pointer">
-            T2B
+          <h1 className="text-xl font-bold text-accent cursor-pointer">
+            <Logo className="text-text-primary" withWordmark={true} />
           </h1>
 
         </Link>
 
         <div className="flex items-center gap-6">
 
-          <p className="text-gray-600 text-sm hidden md:block">
+          <p className="text-muted text-sm hidden md:block">
             Organize suas compras com inteligência
           </p>
 
