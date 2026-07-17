@@ -17,14 +17,6 @@ export default function Header() {
 
         </Link>
 
-        <div className="flex items-center gap-6">
-
-          <p className="text-muted text-sm hidden md:block">
-            Organize suas compras com inteligência
-          </p>
-
-        </div>
-
       </div>
 
     </header>
