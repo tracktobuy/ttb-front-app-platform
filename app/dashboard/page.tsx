@@ -108,8 +108,8 @@ export default function Dashboard() {
               key={cat}
               onClick={() => setFilter(cat)}
               className={`px-4 py-2 rounded-full text-sm ${filter === cat
-                ? "bg-indigo-600 text-white"
-                : "bg-gray-200"
+                ? "bg-accent text-bg"
+                : "bg-surface-raised text-primary"
                 }`}
             >
               {cat}
@@ -119,7 +119,7 @@ export default function Dashboard() {
       )}
 
       {products.length === 0 && !loading && (
-        <div className="text-center mt-20 text-gray-500">
+        <div className="text-center mt-20 text-muted">
           <p className="text-lg font-medium">
             Nenhum produto ainda
           </p>
