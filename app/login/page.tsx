@@ -39,7 +39,6 @@ export default async function LoginPage() {
 
             <p className="mb-10 text-center text-sm text-white/50">
               Sign in to your account to continue tracking all your desired products.
-              !!!! yeahhh
             </p>
 
             <div className="w-full space-y-4">
