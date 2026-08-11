@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Home, LayoutGrid, PlusCircle } from "lucide-react"
+import { Home, LayoutGrid, LogOut, PlusCircle } from "lucide-react"
 
 export default function Sidebar() {
 
@@ -31,6 +31,14 @@ export default function Sidebar() {
         title="Adicionar produto"
       >
         <PlusCircle className="text-muted hover:text-accent" size={22} />
+      </Link>
+
+      <Link
+        href="/logout"
+        className="p-2 rounded-lg hover:bg-accent-dim transition mt-auto"
+        title="Sair"
+      >
+        <LogOut className="text-muted hover:text-accent" size={22} />
       </Link>
 
     </aside>
